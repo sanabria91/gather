@@ -301,3 +301,11 @@ ul {
 .addEventtoGathering .row {
 	margin: 0 auto 20px auto;
 }
+
+.suggestionForm {
+	overflow: hidden;
+}
+
+div.container {
+	overflow: hidden;
+}

@@ -64,7 +64,7 @@ if(isset($_POST['submit']))
     if($fnameErr == "" && $lnameErr == "" && $emailErr == "" && $titleErr == "" && $suggestErr == "") {
         $add = $mysuggest->addSuggest($fname, $lname, $email, $date, $title, $suggest, $sugg_id);
         if ($add == 1) {
-            header("Location: suggestion.php");
+            header("Location: BusinessList.php");
         }
     }
 }
@@ -88,57 +88,57 @@ if(isset($_POST['submit']))
 </head>
 <body>
 <?php include(__root."views/components/userheader.php"); ?>
-<div class="container">
+<div class="container suggestionForm">
 
     <form action="suggestionForm.php" method="post">
 
-        <legend>Suggestion Form</legend>
+        <h2>Suggestion Form</h2>
         <input type="hidden" value="<?php if(isset($_POST['create'])) {echo $_POST['id']; } ?>" name="sugID">
 
         <!--FIRST NAME-->
-        <label for="in_Fname">
-            <input type="text" id="formFname" name="f_Fname" value="<?php echo $fname;?>"/>
-            <div class="label-text">First name</div>
+        <div class="form-group">
+            <label for="f_Fname">First name</label>
+            <input type="text" id="formFname" class="form-control" name="f_Fname" value="<?php echo $fname;?>"/>
             <span id="msg"><?php echo $fnameErr; ?></span>
-        </label><br/>
+        </div>
 
         <!--LAST NAME-->
-        <label for="in_Lname">
-            <input type="text" id="formLname" name="f_Lname" value="<?php echo $lname;?>"/>
-            <div class="label-text">Last name</div>
+        <div class="form-group">
+            <label for="f_Lname">Last name</label>
+            <input type="text" id="formLname" class="form-control" name="f_Lname" value="<?php echo $lname;?>"/>
             <span id="msg"><?php echo $lnameErr; ?></span>
-        </label><br/>
+        </div>
 
         <!--EMAIL-->
-        <label for="in_Email">
-            <input type="text" id="formEmail" name="f_Email" value="<?php echo $email;?>"/>
-            <div class="label-text">Email</div>
+        <div class="form-group">
+            <label for="f_Email">Email</label>
+            <input type="text" id="formEmail" class="form-control" name="f_Email" value="<?php echo $email;?>"/>
             <span id="msg"><?php echo $emailErr; ?></span>
-        </label><br/>
+        </div>
 
         <!--DATE-->
-        <label for="in_Date">
-            <input type="text" id="formDate" name="f_Date" value="<?php echo date("Y/m/d"); ?>"/>
-            <div class="label-text">Date</div>
-        </label><br/>
+        <div class="form-group">
+            <label for="f_Date">Date</label>
+            <input type="text" id="formDate" class="form-control" name="f_Date" value="<?php echo date("Y/m/d"); ?>"/>
+        </div>
 
         <!--TITLE-->
-        <label for="in_Title">
-            <input type="text" id="formTitle" name="f_Title" value="<?php echo $title;?>"/>
-            <div class="label-text">Title</div>
+        <div class="form-group">
+            <label for="f_Title">Title</label>
+            <input type="text" id="formTitle" class="form-control" name="f_Title" value="<?php echo $title;?>"/>
             <span id="msg"><?php echo $titleErr; ?></span>
-        </label><br/>
+        </div>
 
         <!-- SUGGESTION -->
-        <label for="in_Sug">
-            <input type="text" id="in_Sug" name="f_Sug" value=""/>
-            <div class="label-text">Suggestion</div>
+        <div class="form-group">
+            <label for="f_Sug">Suggestion</label>
+            <input type="text" id="in_Sug" class="form-control" name="f_Sug" value=""/>
             <span id="msg"><?php echo $suggestErr; ?></span>
-        </label><br/>
+        </div>
 
         <!-- SUBMIT -->
         <p>
-            <button id="button" value="Submit" name="submit">Create Suggestion</button>
+            <button id="button" class="btn btn-info" value="Submit" name="submit">Create Suggestion</button>
         </p>
 
     </form>
