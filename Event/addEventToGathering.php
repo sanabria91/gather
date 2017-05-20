@@ -45,13 +45,15 @@ $gatherings = $gathercontroller->getGathersbyUser($db,$_SESSION['LoggedIn']['Use
 <body>
 
 <?php include(__root."views/components/userheader.php"); ?>
-<div class="container">
-<div>
-    <h2>My Gathering</h2>
+<div class="container addEventtoGathering">
+    <h2 class="pageTitle">My Gathering</h2>
+<div class="row">
     <?php foreach($gatherings as $gathering):?>
-        <div>
-            <p>Gathering Name: <?php echo $gathering['gatheringName']?></p>
-            <p>Gathering Description: <?php echo $gathering['gatheringDescription']?></p>
+        <div class="col-sm-6 single_gathering">
+            <p>Gathering Name: </p>
+            <p><span class="bold"><?php echo $gathering['gatheringName']?></span></p>
+            <p>Gathering Description: </p>
+            <p><span class="bold"><?php echo $gathering['gatheringDescription']?></span></p>
             <form action="addEventToGathering.php" method="POST">
                 <input name="gatheringId" value='<?php echo $gathering['id']?>' hidden/>
                 <input name="eventId" value='<?php echo $_GET['id']?>' hidden/>

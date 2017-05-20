@@ -277,3 +277,27 @@ ul {
 		font-size: 12px;
 	}
 }
+
+.bold {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.single_gathering {
+	padding: 15px;
+	background: #0077cc;
+	color: #fff;
+	border-radius: 5px;
+}
+
+.pageTitle {
+	margin: 20px auto;
+}
+
+.addEventtoGathering {
+	overflow: hidden;
+}
+
+.addEventtoGathering .row {
+	margin: 0 auto 20px auto;
+}

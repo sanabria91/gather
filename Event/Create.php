@@ -32,6 +32,7 @@ if($_SESSION['LoggedIn']['UserRole'] == 'business') {
             && isset($_POST['EndDateTime']) && isset($_POST['StartDateTime']) 
             && isset($_POST['BusinessId']) && isset($_POST['EventDescription'])
             && isset($_POST['price'])) {
+            $result = null;
             if(date("Y-m-d H:i:s") < $_POST['StartDateTime'] && date("Y-m-d H:i:s") < $_POST['EndDateTime'] && $_POST['StartDateTime'] < $_POST['EndDateTime']) {
                 try {
                     $event = new EventModel($_POST);
