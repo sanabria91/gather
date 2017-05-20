@@ -108,39 +108,47 @@ if(isset($_POST['create_profile_submit'])) {
     <?php if (!empty($error_message)) { ?>
         <p class="error"><?php echo htmlspecialchars($error_message); ?></p>
     <?php } ?>
-</div><!--end of error row - this is guna by default have a full width column-->
-    <form action="create.php" method="post" name="mainForm" enctype="multipart/form-data"><!--enctype means for image upload-->
-        <div class="row col-lg-12 col md-12  col-sm-12 col-xs-12" id="display">
-            <p class="usersSignUpinfo_username">Username: <?php echo '' . $usersDetails['username']; ?></p>
-            <p class="usersSignUpinfo_fullName">Full Name: <?php echo '' . $usersDetails['firstname'] . ' ' . $usersDetails['middlename'] . ' ' . $usersDetails['lastname']; ?></p>
-            <p class="usersSignUpinfo_middleName">Email: <?php echo '' . $usersDetails['email']; ?></p>
+    </div><!--end of error row - this is guna by default have a full width column-->
+
+    <div class="row col-lg-12 col md-12  col-sm-12 col-xs-12" id="display">
+        <p class="usersSignUpinfo_username">Username: <span class="bold"><?php echo '' . $usersDetails['username']; ?></span></p>
+        <p class="usersSignUpinfo_fullName">Full Name: <span class="bold"><?php echo '' . $usersDetails['firstname'] . ' ' . $usersDetails['middlename'] . ' ' . $usersDetails['lastname']; ?></span></p>
+        <p class="usersSignUpinfo_middleName">Email: <span class="bold"><?php echo '' . $usersDetails['email']; ?></span></p>
+    </div>
+
+    <form class="row col-lg-12 col md-12  col-sm-12 col-xs-12" action="create.php" method="post" name="mainForm" enctype="multipart/form-data"><!--enctype means for image upload-->
+
+        <div class="form-group" id="formrow1">
+            <label class="user_dob_label">Date Of Birthday: </label>
+            <input type="date" class="form-control" id="user_dob" name="user_dob" value="<?php echo htmlspecialchars($user_dob); ?>">
         </div>
-        <div class="row col-lg-12 col md-12  col-sm-12 col-xs-12" id="formrow1">
-            <label class="user_dob_label">DOB: </label>
-            <input type="date" id="user_dob" name="user_dob" value="<?php echo htmlspecialchars($user_dob); ?>">
-        </div>
-        <div class="row col-lg-12 col md-12  col-sm-12 col-xs-12" id="formrow1.5">
+
+        <div class="form-group" id="formrow1.5">
             <label class="address_label">Address: </label>
-            <input type="text" id="address" name="address" placeholder="ex: 883 Drysdale Drive, Mississauga ON, L5V 1X5" value="<?php echo htmlspecialchars($address); ?>">
+            <input type="text" class="form-control" id="address" name="address" placeholder="ex: 883 Drysdale Drive, Mississauga ON, L5V 1X5" value="<?php echo htmlspecialchars($address); ?>">
         </div><!--formrow1-->
-        <div class="row col-lg-12 col md-12  col-sm-12 col-xs-12" id="formrow2">
+
+        <div class="form-group" id="formrow2">
             <label class="education_level_label">Highest Education: </label>
-            <input type="text" id = "education_level" name="education_level" placeholder="ex. Postgraduate Diploma in Web Development" value="<?php echo htmlspecialchars($education_level); ?>">
+            <input type="text" class="form-control" id = "education_level" name="education_level" placeholder="ex. Postgraduate Diploma in Web Development" value="<?php echo htmlspecialchars($education_level); ?>">
         </div>
-        <div class="row col-lg-12 col md-12  col-sm-12 col-xs-12" id="formrow2.5">
+
+        <div class="form-group" id="formrow2.5">
             <label class="current_jobtitle_label">Current Job Title: </label>
-            <input type="text" id = "current_jobtitle" name="current_jobtitle" placeholder="ex. Strategy Assistant at Starcom Mediavest" value="<?php echo htmlspecialchars($current_jobtitle); ?>">
-        </div><!--formrow2-->
-        <div class="row" id="formrow4">
+            <input type="text" class="form-control" id = "current_jobtitle" name="current_jobtitle" placeholder="ex. Strategy Assistant at Starcom Mediavest" value="<?php echo htmlspecialchars($current_jobtitle); ?>">
+        </div>
+
+        <div class="form-group" id="formrow4">
             <label class="user_description_label">Please write a brief description about yourself:</label><br>
-            <input type="text" class="user_description" id="user_description" name="user_description" rows="2" cols="50" placeholder="Must be between 300 and 1000 characters" value="<?php echo htmlspecialchars($user_description); ?>">
-            <!--                    <textarea input type="text" class="user_description" id="user_description" name="user_description" rows="2" cols="50" placeholder="Must be between 300 and 1000 characters" value="--><?php //echo htmlspecialchars($user_description); ?><!--"></textarea>-->
-        </div><!--formrow4-->
-        <div class="row" id="formrow5">
+            <textarea class="form-control user_description" id="user_description" name="user_description" rows="2" cols="50" placeholder="Must be between 300 and 1000 characters" value='<?php echo htmlspecialchars($user_description); ?>'></textarea>
+        </div>
+
+        <div class="form-group" id="formrow5">
             <label class="profile_image_label">Please upload a picture of yourself to be used as a profile picture. Picture must be 300px X 300px.</label><br>
-            <input type="file" enctype="multipart/form-data" name="profile_image" id="profile_image">
-        </div><!--formrow5-->
-        <div class="row" id="formbutton">
+            <input type="file" enctype="multipart/form-data" name="profile_image" id="profile_image" class="form-control">
+        </div>
+
+        <div class="form-group" id="formbutton">
             <input type="hidden" name="userIdfromSession" value="<?php echo $_SESSION['user_id'] ?>">
             <input type="submit" class="btn btn-success btn-lg" name="create_profile_submit" id="create_profile_submit"  value="Create Profile"><br>
         </div>
