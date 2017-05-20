@@ -1,0 +1,7 @@
+.jumbotron{
+    background-color: #428bca;
+}
+
+#label, #userDescription{
+    font-weight: bold;
+}

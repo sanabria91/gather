@@ -1,0 +1,107 @@
+body, input{
+    color: #363639;
+}
+
+#list{
+    text-decoration: none;
+    border-bottom:1px dashed #363639
+}
+
+.delete{
+    background-color: transparent;
+    border: none;
+    opacity: 0.4;
+}
+
+.edit{
+    background-color: transparent;
+    border: none;
+    opacity: 0.4;
+}
+
+.timestamp form, p#details{
+    display: inline-block;
+}
+
+/* List */
+.list{
+    background-color: #fff;
+    margin:20px auto;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 2px;
+    box-shadow: 3px 3px 0;
+    box-sizing: border-box;
+}
+
+.list .header{
+    margin: 0 0 10px 0;
+}
+
+/* Items */
+
+.items{
+    margin:0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.done-button:hover,.delete:hover, .edit:hover{
+    opacity: 1;
+}
+
+
+
+.items .item.done{
+    text-decoration: line-through;
+}
+
+.items li,
+.item-add input{
+    border: 0;
+    border-bottom: 1px dashed #ccc;
+    padding: 10px 0 5px 0;
+}
+
+.input{
+   width: 100%;
+}
+
+.input:focus{
+    outline:none;
+}
+
+
+#details{
+    margin-top: 0.5em;
+    font-size: 0.8em;
+}
+
+/* Done Button */
+
+a.done-button, .edit{
+    display: inline-block;
+    font-size: 0.8em;
+    background-color:#d9dfe1;
+    color: #363639;
+    padding: 3px 6px;
+    border: 0;
+    opacity: 0.4;
+}
+
+
+/*Submit*/
+
+.submit{
+    background-color: #fff;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 3px 3px 0 #ddd;
+}
+
+.item, .item-done {
+    word-wrap: break-word;
+}

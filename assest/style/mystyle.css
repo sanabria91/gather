@@ -1,0 +1,12 @@
+.row
+{
+    border: 2px solid black; margin-bottom: 2em; background-color: #ebf5fb;
+}
+.col-sm-4:hover {
+    -webkit-transform:scale(1.1);
+    transform:scale(1.1);
+}
+.col-sm-4 {
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+}

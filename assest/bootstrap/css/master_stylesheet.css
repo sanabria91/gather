@@ -1,0 +1,188 @@
+html {
+	box-sizing:border-box;
+	
+}
+
+*,*:before,*:after {
+  box-sizing:inherit;
+}
+
+h4{
+	color: #f06d3c;
+}
+.container{
+	max-width:980px;
+	margin: 0 auto;
+}
+
+.icon{
+	display:block;
+	margin: 0 auto;
+}
+
+.img_box{
+	width: 100%;
+	height: 115px;
+	margin: 0 auto;
+	display: inline-block;
+}
+
+#head{
+	padding-top: 15px;
+	padding-bottom: 5px;
+}
+
+#login ul{
+	top: -1em;
+	right: 1em;
+	position: absolute;
+} 
+
+#login li {
+	display: inline-block;
+	background-color: #86bfcf;
+	padding: 0.4em 1em;
+	border-radius: 0 0 0.25em 0.25em;
+	margin-left: 0.25em
+}
+
+#login li a{
+	color: white;
+}
+
+#header{
+	padding-bottom: 0.2em;
+}
+
+#main_message{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 50%;
+	bottom: auto;
+	transform: translateY(-50%);
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+
+
+}
+
+#main{
+	position: relative;
+	opacity: 0.9;
+	filter: alpha(opacity=90); /*for IE8 and earlier */
+	
+}
+
+.big_text{
+	font-family: "Arial Bold";
+	font-size: 60px;
+	color: white;
+	margin:0;
+	line-height: 85%;
+	-webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black
+
+}
+
+.subtext{
+	font-family: "Arial Bold";
+	font-size: 24px;
+	color: white;
+	-webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black
+
+}
+
+header{
+	margin-top: 1em;
+	border-bottom: 1px solid #999;
+	position: relative;
+	float:left;
+	width:100%;
+	margin-bottom: 0.2em;
+}
+
+#banner{
+	margin-top: 1em;
+}
+
+footer{
+	padding:0.5em 0;
+	border-top: solid black 1px;
+}
+
+#icons{
+	vertical-align: top;
+}
+
+.call-to-action{
+	border: 3px solid #539bf9;
+    border-radius: 0.5em;
+    padding: 1.2em;
+    text-align: center;
+    line-height: 2;
+
+	margin-bottom: 1em;
+}
+
+.menu li {
+ font-weight: bold;	
+ text-transform: uppercase;
+ list-style: none;
+}
+
+.menu li li {
+ font-weight: normal;	
+ text-transform: none;
+}
+
+
+@media only screen and (min-width: 768px){
+
+#first{
+	margin-left: 5%;
+}
+}
+
+@media only screen and (max-width: 767px){
+.big_text{
+	font-size: 50px;
+}
+
+.subtext{
+	font-size: 20px;
+}
+
+#login li{
+	font-size:12px;
+}
+
+.menu li {
+	font-size: 10px;
+}
+
+}
+
+@media only screen and (max-width: 660px){
+.big_text{
+	font-size: 40px;
+}
+
+.subtext{
+	font-size: 18px;
+}
+}
+
+@media only screen and (max-width: 545px){
+.big_text{
+	font-size: 30px;
+}
+
+.subtext{
+	font-size: 16px;
+}
+}
+
