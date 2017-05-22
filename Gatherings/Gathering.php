@@ -22,7 +22,7 @@ $usersDetails = $gathercontroller->selectUserDetails($db, $_SESSION['LoggedIn'][
 $row = $gathercontroller->selectGathering($db,$id);
 
 
-$events = $gathercontroller->getgatheringsEvents($db);
+$events = $gathercontroller->getgatheringsEvents($db, $id);
 
 $gathercontroller = new gatheringsController();
 
@@ -111,38 +111,22 @@ if(isset($_POST['listitem'])){
                 <div class="panel-body">
                     <div class="row">
                         <?php foreach($events as $event): ?>
-                            <div class="col-md-4">
-                                <div class="thumbnail">
-                                    <img alt="300x200" src="http://lorempixel.com/300/150/technics">
+                            <div class="col-sm-4">
+                                <div class="thumbnail fixheight">
+                                    <img alt="300x200" src="https://unsplash.it/320/150?image=<?php echo $event->imageId ?>">
                                     <div class="caption">
-                                        <h4 class="pull-right"></h4>
-                                        <?php echo $event->EventName;
-                                        echo $event->EventDescription;
-                                        echo "<br/> ";
-                                        echo '$'. $event->price;
-                                        echo "<br/>";?>
+                                        <h4 class="pull-right"><?php echo $event->price ?></h4>
+                                        <h4><a><?php echo $event->EventName;?></a></h4>
+                                        <p><?php echo $event->EventDescription; ?>
+                                        </p>
                                         <span><a href="<?php echo __httpRoot . "Event/bookEvents.php?id=".$event->id ?>" class="btn btn-danger" role="button">Book</a></span>
                                         <span><a href="<?php echo __httpRoot . "Event/StripePaymentForm.php?id=".$event->id ?>" class="btn btn-info" role="button">Pay</a></span>
-                                    </div>
-                                    <div class="ratings">
-                                        <p class="pull-right">15 reviews</p>
-                                        <p>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                        </p>
                                     </div>
                                 </div>
                             </div>
                         <?php endforeach; ?>
                     </div>
                 </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">Review</div>
-                <div class="panel-body"> Insert Reviews Here. </div>
             </div>
                 <!------------------ Checklist (Kevin)-------------->
                 <div class="panel panel-default">
@@ -157,7 +141,7 @@ if(isset($_POST['listitem'])){
                                             <a href="mark.php?as=done&item=<?php echo $lists['id']?>" class="done-button" id="list">Marked As Done</a>
                                         <?php endif; ?>
                                         <div class="timestamp">
-                                            <p id="details">Added by: <?php echo $lists['username']?>On: <?php echo $lists['created']?></p>
+                                            <p id="details">Added by:<span style="color:red;"><?php echo $lists['username']?></span> On:<strong><?php echo $lists['created']?></strong></p>
                                             <?php if($_SESSION['LoggedIn']['UserId']== $lists['user_id']) :?>
                                             <form action="updateList.php" method="get" >
                                                 <input class="edit" type="hidden" value="<?php echo $lists['id']; ?>" name=id>

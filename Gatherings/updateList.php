@@ -26,7 +26,6 @@ if(isset($_GET['upd'])){
     $done = $_GET['completed'];
 
     $list->updateItem($db,$listitem, $done, $id);
-    header("Location: Gatherings.php?id=4");
 }
 
 ?>

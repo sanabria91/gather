@@ -149,9 +149,10 @@ class gatheringsController
         return $events;
     }
 
-   public function getgatheringsEvents($db){
-      $query = "SELECT * FROM gatheringevents";
+   public function getgatheringsEvents($db, $id){
+      $query = "SELECT ge.*, e.* FROM gatherings_events ge JOIN events e ON ge.eventid = e.id WHERE GatheringId = :id";
        $pdostmt2 = $db->prepare($query);
+       $pdostmt2->bindValue(':id',$id);
        $pdostmt2->execute();
 
        $events = $pdostmt2->fetchAll(PDO::FETCH_OBJ);
