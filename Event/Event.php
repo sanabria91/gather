@@ -1,6 +1,6 @@
 <?php
 //By Chen
- if(!defined("__root")) {
+if(!defined("__root")) {
     require( $_SERVER['DOCUMENT_ROOT']. "\php_gather\configer.php");
 }
 include __root . 'DbConnect/connect.php';
@@ -82,9 +82,12 @@ if(isset($_GET["id"])) {
         </div>
     <?php endif;?>
     <?php foreach ($businessdetails as $bd) : ?>
+    <?php if(is_a($event, "EventModel")): ?>
     <div class="row">
         <div class="col-md-3">
-                <h1 class=""><a href='<?php echo __httpRoot . "Business/Business.php?id=" . $bd['id']; ?>'><?php echo $bd['businessName']; ?></a></h1>
+            <h1 class=""><?php echo $event->getName(); ?></a></h1>
+                <p>Event Belongs to:</p>
+                <h3 style="padding-top: 0" class=""><a href='<?php echo __httpRoot . "Business/Business.php?id=" . $bd['id']; ?>'><?php echo $bd['businessName']; ?></a></h3>
                 <i style="color:green" class="fa fa-check-square"></i> Still In Business
                 <div class="ratings">
                     <span>
@@ -96,15 +99,9 @@ if(isset($_GET["id"])) {
                     </span>
                     <span>15 reviews</span><br/><br/>
                 </div>
-                <?php if($_SESSION['LoggedIn']['UserRole'] == 'normal'):?>
-                <div>
-                    <button type="button" class="btn btn-danger">Leave A Review</button>
-                    <button type="button" class="btn btn-info" style="margin-top:1em;">Send me a message</button>
-                </div>
-                <?php endif?>
         </div>
         <div class="col-md-9">
-            <img title="profile image" class="img-responsive" src="http://lorempixel.com/850/250/nightlife">
+            <img title="profile image" class="img-responsive" src="https://unsplash.it/852/275?image=<?php echo $event->getImage();?>&gravity=north">
         </div>
     </div>
     <div class="row" style="margin-top:1em;">
@@ -127,7 +124,7 @@ if(isset($_GET["id"])) {
                 <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i>
 
                 </div>
-                <div class="panel-body"><a href="#" class="">yourwebsite.com</a>
+                <div class="panel-body"><a href="#" class=""><?php echo $bd['businessName']; ?>.com</a>
 
                 </div>
             </div>
@@ -150,19 +147,19 @@ if(isset($_GET["id"])) {
                 <div class="panel-heading"><?php echo $bd['businessName']; ?> Information</div>
                 <div class="panel-body"><?php echo $bd['businessDescription']; ?></div>
             </div>
-            <?php if(is_a($event, "EventModel")): ?>
+
             <div class="panel panel-default">
                 <div class="panel-heading"><?php echo $event->getName(); ?></div>
                 <div class="panel-body">
                     <p>Description: <?php echo $event->getDescription(); ?></p>
                     <p>Start at: <?php echo $event->getStartDateTime("detail"); ?></p>
                     <p>End at: <?php echo $event->getEndDateTime("detail"); ?></p>
-                    <p>Price: <?php echo $event->getPrice(); ?></p>
-                    <?php if($event->getStartDateTime("detail") < date("Y-m-d H:i:s")):?>
-                        <p class="alert alert-danger">Past Event</p>
+                    <p>Price: $<?php echo $event->getPrice(); ?></p>
+                    <?php if($event->getEndDateTime("detail") < date("Y-m-d H:i:s")):?>
+                        <p class="alert alert-danger">Event Has Passed</p>
                     <?php else: ?>
                         <?php if($_SESSION['LoggedIn']['UserRole'] == 'normal'):?>
-                            <a href='addEventToGathering.php?id=<?php echo $event->getEventId()?>' class="btn btn-default">Add to my Gathering</a>
+                            <a href='addEventToGathering.php?id=<?php echo $event->getEventId()?>' class="btn btn-success">Add to my Gathering</a>
                         <?php else: ?>
                             <a class="btn btn-default" id="category_event_btn">Category This Event</a>
                         <?php endif;?>

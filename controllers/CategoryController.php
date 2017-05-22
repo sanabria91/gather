@@ -75,7 +75,8 @@
         {
             include_once __root . "models\EventModel.php";
             $allEvents = array();
-            $query = "SELECT e.*, eg.CategoryId, c.CategoryTitle, b.*, l.* FROM events e JOIN eventcategory eg ON e.id = eg.EventId JOIN category c ON eg.CategoryId = c.Id JOIN business b ON e.BusinessId = b.id JOIN locations l ON l.Id = b.locationid WHERE eg.CategoryId = :id";
+            $query = "SELECT e.*, eg.CategoryId, c.CategoryTitle FROM events e JOIN eventcategory eg ON e.id = eg.EventId JOIN category c ON eg.CategoryId = c.Id WHERE eg.CategoryId = :id";
+            /*$query = "SELECT e.*, eg.CategoryId, c.CategoryTitle, b.*, l.* FROM events e JOIN eventcategory eg ON e.id = eg.EventId JOIN category c ON eg.CategoryId = c.Id JOIN business b ON e.BusinessId = b.id JOIN locations l ON l.Id = b.locationid WHERE eg.CategoryId = :id";*/
             $pdostmt = $this->_db->prepare($query);
             $pdostmt->bindValue(":id", $id, PDO::PARAM_STR);
             $pdostmt -> execute();

@@ -1,12 +1,9 @@
 <!-----------------------------------------4. REVIEWS (SIJI)------------------------------------>
 <div class="panel panel-default">
     <div class="panel-heading">
-        Review<span class="pull-right">
+        Reviews<span class="pull-right">
         <?php if(($_SESSION['LoggedIn']['UserRole']== 'business')&&(!isset($_GET['id']))): ?>
             <a href="<?php echo __httpRoot . "Business/ReviewAdmin.php?id=" .$businessId; ?>">Manage Reviews</a>
-        <?php endif; ?>
-        <?php if(($_SESSION['LoggedIn']['UserRole']== 'normal')): ?>
-            <a href="<?php echo __httpRoot . "Business/addReviews.php?id=" .$businessId; ?>">Add Review</a>
         <?php endif; ?>
     </div>
     <div class="panel-body">

@@ -1,6 +1,6 @@
 <div class="panel panel-default" id="business-review-form">
     <div class="panel-heading">
-        <h3>Write a review about this business here</h3>
+        Submit a Review
     </div>
     <div class="panel-body">
         <form name="customer_reviews" id="submit_form">
@@ -9,9 +9,9 @@
             <input name="businessid" value='<?php echo $_GET['id']; ?>' id="review-businessid" hidden>
             <fieldset name="review">
                 <div>
-                    <label for="review">Review:</label>
+                    <label for="review">Review:</label><br />
                     <textarea id="review" name="review" rows="4" cols="50"></textarea>
-                    <span id="review_text"><?php echo $error_text; ?></span>
+                    <span id="review_text"><?php echo $error_text; ?></span><br />
                 </div>
                 <div>
                     <input type="submit" id="submit_review" value="submit" name="submit"/>

@@ -57,6 +57,7 @@ $reviews = $reviewController->displayreviewsbybusinessid($businessId);
 $ratings = $rating->getmostpopularbyId($businessId);
 $totalreview = $reviewController->getCountReviews($businessId);
 
+
 ?>
 <!DOCTYPE>
 <html>
@@ -102,13 +103,13 @@ $totalreview = $reviewController->getCountReviews($businessId);
 
                 <?php if(($_SESSION['LoggedIn']['UserRole']== 'business')&&(!isset($_GET['id']))) :?>
                      <div>
-                        <a href="<?php echo __httpRoot . "Business/updateBusiness.php?id=" .$businessId; ?>" class="btn btn-info">Update User Profile</a></span><br /><br />
-                        <a href="<?php echo __httpRoot . "Business/Discounts.php?id=" .$businessId; ?>" class="btn btn-info">Manage Discount</a></span>
+                         <a href="<?php echo __httpRoot . "Business/SuggestionAdmin.php?id=" .$businessId; ?>" class="btn btn-info">Manage Suggestions</a></span><br /><br />
+                         <a href="<?php echo __httpRoot . "Business/Discounts.php?id=" .$businessId; ?>" class="btn btn-info">Manage Discount</a></span>
                     </div>
                 <?php endif; ?>
         </div>
         <div class="col-md-9">
-            <img title="profile image" class="img-responsive" src="http://lorempixel.com/850/250/nightlife">
+            <img title="profile image" class="img-responsive" src="https://unsplash.it/850/275?image=<?php echo $bd['imageId']; ?>">
         </div>
     </div>
     <div class="row" style="margin-top:1em;">
@@ -132,7 +133,7 @@ $totalreview = $reviewController->getCountReviews($businessId);
                     Website <i class="fa fa-link fa-1x"></i>
                 </div>
                 <div class="panel-body">
-                    <a href="#" class="">yourwebsite.com</a>
+                    <a href="#" class=""><?php echo $bd['businessName'] ?>.com</a>
                 </div>
             </div>
 
@@ -151,14 +152,16 @@ $totalreview = $reviewController->getCountReviews($businessId);
         <!-----------------------------------------BUSINESS MAIN (KEVIN)------------------------------------>
         <div class="col-sm-9" contenteditable="false" >
             <div class="panel panel-default">
-                <div class="panel-heading"><?php echo $bd['businessName']; ?> Description</div>
+                <div class="panel-heading"><?php echo $bd['businessName']; ?> Description<span class="pull-right">
+                <?php if(($_SESSION['LoggedIn']['UserRole']== 'business')&&(!isset($_GET['id']))): ?>
+                        <a href="<?php echo __httpRoot . "Business/updateBusiness.php?id=" .$businessId; ?>">Update Details</a></span>
+                <?php endif; ?></div>
                 <div class="panel-body"><?php echo $bd['businessDescription']; ?></div>
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading" contenteditable="false">Events<span class="pull-right">
                 <?php if(($_SESSION['LoggedIn']['UserRole']== 'business')&&(!isset($_GET['id']))): ?>
-                    <a href='<?php echo __httpRoot . "Event\Create.php";?>' >Add Event</a>
-                    <a href="<?php echo __httpRoot . "Business/SuggestionAdmin.php?id=" .$businessId; ?>">Manage Suggestions</a></span>
+                    <a href='<?php echo __httpRoot . "Event\Create.php";?>' >Add New Event</a>
                 <?php endif; ?>
                 </div>
                 <div class="panel-body">
@@ -167,7 +170,7 @@ $totalreview = $reviewController->getCountReviews($businessId);
                         <?php foreach($events as $event): ?>
                             <div class="col-sm-4 fixheight">
                                 <div class="thumbnail">
-                                    <img alt="300x200" src="http://lorempixel.com/300/150/technics">
+                                    <img alt="300x200" src="https://unsplash.it/320/150?image=<?php echo $event->getImage();?>">
                                     <div class="caption">
                                         <h4 class="pull-right">$<?php echo $event->getPrice();?></h4>
                                         <h4>

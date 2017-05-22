@@ -37,8 +37,8 @@ if(isset($_GET['category'])) {
 } else {
     $events = $eventConnect->getEvents();
 }
-
 $categories = $categoryConnect->getCategories();
+
 
 ?>
 
@@ -53,7 +53,7 @@ $categories = $categoryConnect->getCategories();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
     <?php include(__root."views/components/globalhead.php"); ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title> All Event | Gather</title>
+    <title> All Events | Gather</title>
 </head>
 <body>
 
@@ -68,7 +68,7 @@ $categories = $categoryConnect->getCategories();
     <?php if(is_a($category, "CategoryModel")): ?>
         <h1>List of <?php echo $category->getTitle(); ?> Events</h1>
     <?php else:?>
-        <h1>List of Event</h1>
+        <h1>List of Events</h1>
     <?php endif?>
     <div class="row">
 
@@ -86,22 +86,12 @@ $categories = $categoryConnect->getCategories();
         <?php foreach($events as $event) : ?>
             <div class="col-sm-4 fixheight">
                 <div class="thumbnail">
-                    <img src="http://placehold.it/320x150" alt="">
+                    <img src="https://unsplash.it/320/150?image=<?php echo $event->getImage();?>" alt="">
                     <div class="caption">
-                        <h4 class="pull-right">$24.99</h4>
+                        <h4 class="pull-right">$<?php echo $event->getPrice();?></h4>
                         <h4><a href="<?php echo __httpRoot . "Event/Event.php?id=" . $event->getEventId(); ?>"><?php echo $event->getName(); ?></a>
                         </h4>
                         <p><?php echo $event->getDescription(); ?></p>
-                    </div>
-                    <div class="ratings">
-                        <p class="pull-right">15 reviews</p>
-                        <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                        </p>
                     </div>
                 </div>
             </div>

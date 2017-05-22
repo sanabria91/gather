@@ -7,6 +7,7 @@ class EventModel
     private $_description;
     private $_startDateTime;
     private $_endDateTime;
+    private $_imageId;
     private $_businessId;
     private $_businessName;
     private $_streetName;
@@ -32,7 +33,7 @@ class EventModel
             $this->_userId = $queryResult['UsersId'];
         }
         if(isset($queryResult['id'])) {
-            $this->_eventId = $queryResult['id']; 
+            $this->_eventId = $queryResult['id'];
         }
         if(isset($queryResult["EventId"])) {
             $this->_eventId = $queryResult["EventId"]; 
@@ -42,6 +43,9 @@ class EventModel
         }
         if(isset($queryResult["CategoryTitle"])) {
             $this->_categoryTitle =$queryResult["CategoryTitle"];
+        }
+        if(isset($queryResult["imageId"])){
+            $this->_imageId = $queryResult["imageId"];
         }
         $this->setPrice($queryResult["price"]);
         $this->setName($queryResult["EventName"]);
@@ -235,6 +239,10 @@ class EventModel
         } else {
             throw new Exception("Price must be bigger or equal than 0.");
         }
+    }
+
+    public function getImage(){
+        return $this->_imageId;
     }
 }
 ?>

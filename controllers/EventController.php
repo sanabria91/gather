@@ -31,7 +31,8 @@
         public function getEventList($id)
         {
             $allEvents = array();
-            $query = "SELECT e.*, d.discount FROM events e LEFT JOIN discounts d ON e.id = d.eventid  WHERE businessid = :id";
+            /*$query = "SELECT e.*, d.discount FROM events e LEFT JOIN discounts d ON e.id = d.eventid  WHERE businessid = :id";*/
+            $query = "SELECT e.*FROM events e WHERE businessid = :id";
             $pdostmt = $this->_db->prepare($query);
             $pdostmt->bindValue(':id',$id);
             $pdostmt->execute();

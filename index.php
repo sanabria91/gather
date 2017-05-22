@@ -42,13 +42,6 @@
                 <div id="login">
                     <nav class="navbar" role="navigation">
                         <ul class="nav navbar-nav">
-
-                            <li>
-                                <a href="<?php /*echo __httpRoot.'userProfile/create.php'*/?>">
-                                    <strong>SIGN UP</strong></a>
-							</li>
-							
-
                             <li class="dropdown">
                                 <a href='<?php echo __httpRoot . "SignUp/new.php"?>' class="" data-toggle="">
                                     <strong>SIGN UP</strong>
@@ -60,12 +53,11 @@
                                     <li>
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                Login via
-                                                <div class="social-buttons">
+                                                Login
+<!--                                                <div class="social-buttons">
                                                     <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
                                                     <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
-                                                </div>
-                                                or
+                                                </div>-->
                                                 <form class="form" role="form" method="post" action="checklogin.php" accept-charset="UTF-8" id="login-nav">
                                                     <div class="form-group">
                                                         <label class="sr-only" for="identifier">UserName or Email Address</label>
@@ -80,13 +72,13 @@
                                                     </div>
                                                     <div class="checkbox">
                                                         <label>
-                                                            <input type="checkbox"> keep me logged-in
+                                                            <input type="checkbox">Keep me logged-in
                                                         </label>
                                                     </div>
                                                 </form>
                                             </div>
                                             <div class="bottom text-center">
-                                                New here ? <a href="#"><b>Join Us</b></a>
+                                                New here ? <a href="#"><b>Sign Up</b></a>
                                             </div>
                                         </div>
                                     </li>
@@ -154,43 +146,7 @@
 			<div class="col-xs-4 col-xs-offset-1">
 				<p id="copyright">© Copyright Gather, 2017. All rights reserved.</p>
 			</div>
-			<div class="col-xs-7">
-				<nav id="footer-navigation">
-					<ul class="menu">
-					  <div class="col-sm-4">
-					  <li><a href="#">Pre-Planning</a>
-						<ul>
-						  <li><a href="#">Most Popular</a></li>
-						  <li><a href="#">Suggestions</a></li>
-						  <li><a href="#">FAQ</a></li>
-						</ul>
-					  </li>
-					 </div>
-					 <div class="col-sm-4">
-					  <li><a href="#">Planning</a>
-						<ul>
-						  <li><a href="#">Want-To-Do List</a></li>
-						  <li><a href="#">Car-Pooling</a></li>
-						  <li><a href="#">Split The Bill</a></li>
-						  <li><a href="#">Public Gathering</a></li>
-						</ul>
-					  </li>
-					</div>
-					 <div class="col-sm-4">
-					  <li><a href="#">Post-Event</a>
-						<ul>
-						  <li><a href="#">Leave A Review</a></li>
-						  <li><a href="#">Our guarantee</a></li>
-						</ul>
-					  <li><a href="#">Business Tools</a>
-						<ul>
-						  <li><a href="#">Offer Discounts</a></li>
-						</ul>
-					  </li>
-					  </div>
-					</ul>
-				</nav>
-			</div>
+
 		</div>
 	</footer>
 		
