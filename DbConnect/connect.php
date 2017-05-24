@@ -4,12 +4,9 @@
  */
 class Connect
 {
-/*  private static $dsn = "mysql:host=my03.winhost.com;dbname=mysql_108240_gatheringdb";*/
-  private static $dsn = "mysql:host=localhost;dbname=gather";
-/*  private static $username = "gatheradmin";
-  private static $password = "gather12345678"; */
-  private static $username = "root";
-  private static $password = "";
+  private static $dsn = "mysql:host=my03.winhost.com;dbname=mysql_108240_gatheringdb";
+  private static $username = "gatheradmin";
+  private static $password = "gather12345678";
   private static $db;
 
   private function __construct()

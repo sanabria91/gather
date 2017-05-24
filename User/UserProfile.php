@@ -20,7 +20,7 @@ if(isset($_GET['loggout'])) {
 	}
 }
 echo var_dump($_SESSION);
-if($_SESSION['LoggedIn']['UserRole'] == "business") {
+if($_SESSION['LoggedIn']['UserRole'] == "bussiness") {
 
     if(isset($_SESSION['LoggedIn']['BusinessId'])) {
         header("Location: " . __httpRoot."Business/Business.php");
