@@ -8,13 +8,14 @@ include __root . 'controllers/userProfile.php';
 $db= Connect::dbConnect();
 
 if(isset($_POST['delete'])){
-$id = $_POST['id'];
-$query = "DELETE FROM user_profile WHERE id = :id";
-$pdostmt = $db->prepare($query);
-$pdostmt->bindValue(':id',$id, PDO::PARAM_INT);
-$row = $pdostmt->execute();
+    $id = $_POST['id'];
+    $query = "DELETE FROM user_profile WHERE id = :id";
+    $pdostmt = $db->prepare($query);
+    $pdostmt->bindValue(':id',$id, PDO::PARAM_INT);
+    $row = $pdostmt->execute();
 //echo "Deleted " . $row;
-header("Location: create.php");
+    header("Location: " . __httpRoot . "Event/Events.php");
+//header("Location: create.php");
 }
 
 

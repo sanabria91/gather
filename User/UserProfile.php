@@ -19,18 +19,25 @@ if(isset($_GET['loggout'])) {
         exit;
 	}
 }
-echo var_dump($_SESSION);
-if($_SESSION['LoggedIn']['UserRole'] == "bussiness") {
 
-    if(isset($_SESSION['LoggedIn']['BusinessId'])) {
-        header("Location: " . __httpRoot."Business/Business.php");
+if($_SESSION['LoggedIn']['UserRole'] == "business") {
+
+    if (isset($_SESSION['LoggedIn']['BusinessId'])) {
+        header("Location: " . __httpRoot . "Business/Business.php");
     } else {
-        header("Location: " . __httpRoot."Business/addBusiness.php");
+        header("Location: " . __httpRoot . "Business/addBusiness.php");
     }
+}
 
-} elseif ($_SESSION['LoggedIn']['UserRole'] == "normal") {
-    header("Location: " . __httpRoot."Event/Events.php");
-} elseif ($_SESSION['LoggedIn']['UserRole'] == "admin") {
+if ($_SESSION['LoggedIn']['UserRole'] == "normal") {
+    if (isset($_SESSION['LoggedIn']['UserId'])) {
+        header("Location: " . __httpRoot . "Newsfeed");
+    } else {
+        header("Location: " . __httpRoot . "userProfile/user_profile_page.php");
+    }
+}
+
+if ($_SESSION['LoggedIn']['UserRole'] == "admin") {
     header("Location: " . __httpRoot."Category/Categories.php");
 }
 

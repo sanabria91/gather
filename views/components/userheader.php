@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" id="logo" href="#"><img src="../assest/images/gather_logo.png" class="nav_logo"></a>
+                <a class="navbar-brand" id="logo" href="<?php echo __httpRoot."Newsfeed"?>"><img src="../assest/images/gather_logo.png" class="nav_logo"></a>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -46,7 +46,7 @@
                                             <p class="text-left small"><?php echo $_SESSION['LoggedIn']['Email'];?></p>
                                             <p class="text-left">
                                                 <a href="#" class="btn btn-primary btn-block btn-sm">Update Login Details</a>
-                                                <a href="#" class="btn btn-primary btn-block btn-sm">Update Profile Details</a>
+                                                <a href="#" class="btn btn-primary btn-block btn-sm">View Profile Details</a>
                                             </p>
                                         </div>
                                     </div>

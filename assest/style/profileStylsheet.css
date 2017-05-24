@@ -1,7 +1,205 @@
-.jumbotron{
+
+
+#uName{
+    color: #428bca;
+    font-weight: bold;
+}
+
+#uNameDescription{
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#descriptionbody{
+    border: 1px solid #428bca;
+}
+
+#descriptionhead{
     background-color: #428bca;
 }
 
-#label, #userDescription{
+#newsfeedhead {
+    background-color: #f06d3c;
+}
+
+#newsfeedheadFeed {
+    background-color: #428bca;
+}
+
+#newsfeedDescription {
+    color: white;
+    font-size: 3em;
     font-weight: bold;
 }
+
+#newsfeedbody{
+    border: 1px solid #428bca;
+}
+
+.mainuName{
+    font-weight: bold;
+    font-size: 3.2em;
+    color: hotpink;
+}
+
+/*#toprow{*/
+    /*border-bottom: 1px solid #428bca;*/
+/*}*/
+
+#descriptionbody{
+    font-size: 1.25em;
+    color: black;
+}
+
+#hiddenhider {
+    background-color: hotpink;
+}
+
+#options{
+    float: right;
+}
+
+#userNameProfile{
+    /*border-bottom: 1px dotted blue;*/
+    border-bottom: 1px solid #428bca;
+}
+
+#label{
+    color: black;
+    font-weight: bold;
+}
+
+.text{
+color: #428bca;
+}
+/*#label {*/
+    /*font-family: Trebuchet MS;*/
+    /*font-weight: bold;*/
+    /*color: darkblue;*/
+/*}*/
+
+/*.userDescription {*/
+    /*font-family: Trebuchet MS;*/
+    /*font-weight: bold;*/
+    /*color: white;*/
+/*}*/
+
+/*#description{*/
+    /*font-family: Trebuchet MS;*/
+    /*font-weight: bold;*/
+    /*color: #000000;*/
+/*}*/
+
+/*.text{*/
+    /*font-family: Trebuchet MS;*/
+    /*color: #000000;*/
+    /*font-weight: normal;*/
+/*}*/
+
+
+
+/*.pictureColumn{*/
+    /*border: 1px solid black;*/
+    /*float: left;*/
+/*}*/
+
+/*#buttonRow{*/
+    /*background-color: #428bca;*/
+    /*height: 25%;*/
+    /*border-bottom: 3px solid black;*/
+/*}*/
+
+/*#buttonColumn, #lorempixem {*/
+    /*padding-top: 1.75%;*/
+/*}*/
+
+/*#formrow4{*/
+    /*margin-left: 10px;*/
+/*}*/
+
+/*.form-control{*/
+    /*padding-bottom: 20%;*/
+/*}*/
+
+
+/*#delete, #deletenope {*/
+    /*background-color: red;*/
+    /*color: white;*/
+/*}*/
+
+/*.unameMain{*/
+    /*font-family: "Trebuchet MS";*/
+    /*font-weight: bold;*/
+    /*font-size: x-large;*/
+    /*color: white;*/
+/*}*/
+
+
+
+
+
+/*OLD.jumbotron {*/
+    /*background-color: #428bca;*/
+
+/*}*/
+
+/*#label {*/
+    /*font-family: Trebuchet MS;*/
+    /*font-weight: bold;*/
+    /*color: darkblue;*/
+/*}*/
+
+/*.userDescription {*/
+    /*font-family: Trebuchet MS;*/
+    /*font-weight: bold;*/
+    /*color: white;*/
+/*}*/
+
+/*#description{*/
+    /*font-family: Trebuchet MS;*/
+    /*font-weight: bold;*/
+    /*color: #000000;*/
+/*}*/
+
+/*.text{*/
+    /*font-family: Trebuchet MS;*/
+    /*color: #000000;*/
+    /*font-weight: normal;*/
+/*}*/
+
+/*.pictureColumn{*/
+    /*border: 1px solid black;*/
+/*}*/
+
+/*#buttonRow{*/
+    /*background-color: #428bca;*/
+    /*height: 25%;*/
+    /*border-bottom: 3px solid black;*/
+/*}*/
+
+/*#buttonColumn, #lorempixem {*/
+    /*padding-top: 1.75%;*/
+/*}*/
+
+/*.tb{*/
+    /*width: 50%;*/
+
+/*}*/
+
+/*.tbbig{*/
+    /*width: 60%;*/
+    /*height: 10%;*/
+/*}*/
+
+/*#delete, #deletenope {*/
+    /*background-color: red;*/
+    /*color: white;*/
+/*}*/
+
+/*.unameMain{*/
+    /*font-family: "Trebuchet MS";*/
+    /*font-weight: bold;*/
+    /*font-size: x-large;*/
+    /*color: white;*/
+/*}*/

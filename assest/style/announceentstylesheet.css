@@ -1,0 +1,96 @@
+.announcementsHeader{
+    color: #86bfcf;
+    padding-top: -1%;
+
+}
+
+/*Styling for the VIew Announcements Button*/
+.viewAnnouncementsButton{
+    border: 1px solid black;
+    padding-left: 1%;
+    color: white;
+    background-color: #86bfcf;
+    font-weight: bold;
+    fill-opacity: 5;
+}
+
+.viewAnnouncementsButtonhidden{
+    border: 1px solid black;
+    padding-left: 1%;
+    color: white;
+    text-align: center;
+    background-color: lightcoral;
+    font-weight: bold;
+    fill-opacity: 5;
+}
+
+.wholeAnnouncement{
+    border: 2px solid #86bfcf;
+    /*padding: 12px;
+    margin-bottom: 2%;
+    width: 28%;*/
+}
+
+
+
+/*Styling the texr for the error message*/
+.error{
+    font-weight: bold;
+    color: red;
+}
+
+.addAnnouncementButton{
+    /* margin-left: 52.5%;*/
+    font-weght: bold;
+    color: white;
+    background-color: #86bfcf;
+}
+
+.deletebutton{
+    font-weght: bold;
+    color: white;
+    font-size: 0.75em;
+    background-color: #86bfcf;
+    /*margin-left: 76%;*/
+}
+
+.userLabel, .subjectLabel {
+    color: #86bfcf;
+    font-style: italic;
+}
+
+.dateClass{
+    font-style: italic;
+    color: dimgray;
+    font-size: 0.9em;
+    float: right;
+    padding-right: 2%;
+}
+
+.announcementLabel {
+    color: #86bfcf;
+}
+
+.eachPost{
+    border: 1px solid black;
+    padding-left: 1%;
+    padding-bottom: 1%;
+}
+
+.subjectandUser{
+    font-size: 0.75em;
+}
+
+.results{
+    height: 100%;
+    max-height: 50%;
+    overflow: auto;
+}
+
+.cyp, .sl,.uid {
+    color: #86bfcf;
+}
+.announcement{
+    height: 10%;
+    width: 40%;
+}

@@ -1,0 +1,90 @@
+#mainCarousel .carousel-inner {
+    border-radius: 10px;
+}
+
+
+#mainheaderNF{
+    color: #428bca;
+}
+
+#phdr{
+    border-bottom: 2px solid black;
+}
+
+#deets{
+    /*color: hotpink;*/
+    font-style: italic;
+}
+
+
+.usernameHeader{
+    color: darkslateblue;
+    /*padding-top: 20%;*/
+    font-size: 3em;
+}
+
+/*#usernamediv{*/
+    /*background-color: lightcoral;*/
+    /*height: 22%;*/
+/*}*/
+
+#posttothefeed{
+    color: #f06d3c;
+    font-weight: bolder;
+}
+
+#postsheader{
+    color: darkmagenta;
+    font-weight: bolder;
+    font-size: 3em;
+    background-color: lightblue;
+    border-bottom: 3px solid black;
+    border-top: 3px solid black;
+}
+
+#newsfeed_post{
+    height: 10%;
+    width: 100% !important;
+}
+
+.userD{
+    font-weight: bold;
+}
+
+.wholeTable {
+    margin-left: 2%;
+}
+
+.dateTable{
+    margin-top:5%;
+    float: right;
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 0.7em;
+    color: darkgrey;
+}
+
+.usernameTable{
+    font-weight: bold;
+    font-size: 1em;
+    color: darkblue;
+}
+
+.postTable{
+    color: black;
+    margin-top: 1%;
+    margin-bottom:2%;
+}
+
+.likesTable{
+    color: #f06d3c;
+    font-weight: bold;
+    padding-top: 1%;
+    margin-bottom: 1%;
+}
+
+.btnTable{
+    /*margin-bottom: 5%;*/
+    padding-bottom: 2%;
+    padding-top: 2%;
+}
